@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+</head>
+<body>
+<h1>Register</h1>
+
+<form><div>
+<label for = "fname">First Name:</label>
+<input id = "fname" type="text" placeholder="John" required >
+<label for = "lname">Last Name:</label>
+<input id = "lname" type="text" placeholder="Smith" required >
+</div>
+
+<div>
+<label for = "male"> Male </label>
+<input id = "male" type = "radio" name = "Gender" value = "MALE">
+<label for = "female"> Female </label>
+<input id = "female" type = "radio" name = "Gender" value = "FEMALE">
+<label for = "other"> Other </label>
+<input id = "other" type = "radio" name = "Gender" value = "OTHER"> 
+</div>
+
+<div>
+<lable> Email: </lable>
+<input name = "email" type="email" placeholder="your email" required>
+<label>Password:</label>
+<input name = "password" type="password" pattern = ".{5,10}" required title = "Password must be between 5 & 10 characters">
+</div>
+
+<label>Birthday:</label>
+<select name = "month">
+	<option>Month</option>
+	<option>Jan</option>
+	<option>Feb</option>
+	<option>Mar</option>
+	<option>Apr</option>
+</select>
+<select name = "day">
+	<option>Day</option>
+	<option>01</option>
+	<option>02</option>
+	<option>03</option>
+	<option>04</option>
+	<option>05</option>
+</select>
+<select name = "year">
+	<option>Year</option>
+	<option>1984</option>
+	<option>1989</option>
+	<option>1991</option>
+	<option>2000</option>
+	<option>2017</option>
+</select>
+
+<p>I agree to the terms and condition <input type="checkbox"></p>
+
+<button>Submit</button>
+</form>
+</body>
+</html>
