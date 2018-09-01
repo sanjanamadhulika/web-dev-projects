@@ -1,0 +1,90 @@
+<div id="addTabData" ng-controller="addController">
+    <h1 ng-if="!isEdit">
+        <u>Add New Employee Details</u>
+    </h1>
+    <h1 ng-if="isEdit">
+        <u>Edit Employee Details</u>
+    </h1>
+
+    <form name="empForm">
+        <br>
+        <br>
+        <bold>* field is required</bold>
+        <br>
+        <br>
+        <div class="form-group row">
+            <lable for="ssnId" class="col-sm-2 col-form-lable">SSN*</lable>
+            <div class="col-sm-8">
+                <input class="form-control" type="text" id="ssnId" name="id" ng-model="employee.id" ng-pattern="/^[0-9]*$/" ng-disabled="isEdit"
+                    required>
+                <span style="color:red" ng-show="empForm.id.$touched && empForm.id.$invalid">SSN is required</span>
+                <span style="color:red" ng-show="empForm.id.$error.pattern">Enter only numbers</span>
+                <span style="color:red">{{ssnError}}</span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <fieldset class="form-group ">
+            <div class="row">
+                <label for="gen" class="col-sm-2 col-form-lable">Gender*</label>
+                <div class="col-sm-8">
+                    <input type="radio" id="gen" value="M" name="gender" ng-model="employee.gender">Male
+                    <input type="radio" id="gen" value="F" name="gender" ng-model="employee.gender">Female
+                </div>
+            </div>
+        </fieldset>
+        <br>
+        <br>
+        <div class="form-group row">
+            <label for="first" class="col-sm-2 col-form-lable">First Name*</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="first" name="fname" ng-model="employee.firstname" ng-pattern="/^[a-zA-z]*$/"
+                    required>
+                <span style="color:red" ng-show="empForm.fname.$touched && empForm.fname.$invalid">Firstname is required</span>
+                <span style="color:red" ng-show="empForm.fname.$error.pattern">Enter only Alphabets</span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group row">
+            <label for="last" class="col-sm-2 col-form-lable">Last Name*</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="last" name="lname" ng-model="employee.lastname" ng-pattern="/^[a-zA-z]*$/" required>
+                <span style="color:red" ng-show="empForm.lname.$touched && empForm.lname.$invalid">Lastname is required</span>
+                <span style="color:red" ng-show="empForm.lname.$error.pattern">Enter only Alphabets</span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-lable">Email*</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control" id="email" name="mail" ng-model="employee.email" required>
+                <span style="color:red" ng-show="empForm.mail.$touched && empForm.mail.$invalid">Valid Email is required</span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group row">
+            <label for="city" class="col-sm-2 col-form-lable">City*</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="city" name="city" ng-model="employee.city" required>
+                <span style="color:red" ng-show="empForm.city.$touched && empForm.city.$invalid">City is required</span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group row">
+            <label for="age" class="col-sm-2 col-form-lable">Age*</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" id="age" name="age" ng-model="employee.age" required>
+                <span style="color:red" ng-show="empForm.age.$touched && empForm.age.$invalid">Age is required</span>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <button type="button" class="btn btn-primary btn-sm" ng-disabled="empForm.$invalid" ng-if="!isEdit" ng-click="addForm(employee)">ADD EMPLOYEE</button>
+        <button type="button" class="btn btn-primary btn-sm" ng-disabled="empForm.$invalid" ng-if="isEdit" ng-click="editForm(employee)">EDIT EMPLOYEE</button>
+    </form>
+</div>
