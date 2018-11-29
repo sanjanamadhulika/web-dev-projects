@@ -1,0 +1,31 @@
+<div class="panel panel-info">
+  <div class="panel-heading">List of Users</div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table" *ngIf="filteredUsers && filteredUsers.length">
+        <thead>
+          <tr>
+            <th class="sortable" (click)="toggleSort()"><a>Full Name</a></th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Company Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of filteredUsers">
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              {{ user.address.street }} {{ user.address.suite }},
+              {{ user.address.city }},
+              {{ user.address.zipcode | fiveDigitsZipcode }}
+            </td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.company.name | uppercase }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
