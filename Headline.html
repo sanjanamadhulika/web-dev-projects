@@ -1,0 +1,42 @@
+body {
+  background : #7a86cb;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.text-wrapper h1 {
+  color: #6849e3;
+  font-family: Merriweather;
+  font-weight: 400;
+  position: relative;
+  transition: color 1s, font-size 1s;
+}
+.text-wrapper h1:before, 
+.text-wrapper h1:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #6849e3;
+    -webkit-transition: width 1.4s;
+    -moz-transition: width 1.4s;
+    -o-transition: width 1.4s;
+    transition: width 1.4s;
+}
+.text-wrapper h1:before{
+  left: 0;
+}
+.text-wrapper h1:after {
+  right: 0;
+}
+.text-wrapper h1:hover {
+  cursor: pointer;
+  color: #fff;
+  font-size: 30px;
+}
+.text-wrapper h1:hover:before, 
+.text-wrapper h1:hover:after {
+  width: 100%;
+  }
